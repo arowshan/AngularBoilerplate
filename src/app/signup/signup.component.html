@@ -1,0 +1,22 @@
+<div class="signup-container" fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
+  <mat-card class="signup-card">
+
+    <form novalidate [formGroup]="signupForm">      
+      <mat-form-field>
+        <input matInput placeholder="Full Name" formControlName="name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Username" formControlName="username" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" type="email" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password" required>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary" class="submit-button">Sing Up</button>
+
+    </form>
+
+  </mat-card>
+</div>
