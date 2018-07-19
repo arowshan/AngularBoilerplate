@@ -21,6 +21,9 @@ export class SigninComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(this.authService.isLoggedIn) {
+      this.router.navigateByUrl('/home');
+    }
     this.signinForm = this.formBuilder.group({
       usernameOrEmail: ['', [Validators.required]],
       password: ['', [Validators.required]],
@@ -28,16 +31,12 @@ export class SigninComponent implements OnInit {
   }
 
   onSigninSubmit(signinForm) {
-    this.apiService.signin(signinForm).subscribe(res => console.log(res));
-  }
-
-  signin() {
-    this.authService.login().subscribe(() => {
+    this.authService.login(signinForm).subscribe(() => {
 
       if (this.authService.isLoggedIn) {
         // Get the redirect URL from our auth service
         // If no redirect has been set, use the default
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/crisis-center/admin';
+        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/home';
  
         // Redirect the user
         this.router.navigate([redirect]);

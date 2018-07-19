@@ -8,7 +8,7 @@ import { CanDeactivateGuardService } from './auth-guard/can-deactivate-guard.ser
 
 
 export const appRoutes = [
-    { path: '', pathMatch: 'full' , redirectTo: 'signup' },
+    { path: '', pathMatch: 'full' , redirectTo: 'signin' },
     { path: 'signup', component: SignupComponent  },
     { path: 'signin', component: SigninComponent  },
     { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
