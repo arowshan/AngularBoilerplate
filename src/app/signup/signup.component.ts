@@ -1,28 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { ApiService } from '../apis/api.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
 
   signupForm: FormGroup;
 
-
- 
-  email = new FormControl('', [Validators.required, Validators.email]);
-
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService) { }
 
   ngOnInit() {
-    this.signupForm = new FormGroup({
-      name: new FormControl(),
-      username: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl()
+    this.signupForm = this.formBuilder.group({
+      name: ['', [Validators.required]],
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
    });
+  }
+
+  onSignupSubmit(signupForm) {
+    this.apiService.signup(signupForm).subscribe(res => console.log(res));
   }
 
 }

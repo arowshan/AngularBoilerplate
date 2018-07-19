@@ -1,0 +1,15 @@
+@import './palette.scss';
+
+.std-card {
+    width: 400px;
+}
+
+.std-full-width-form>mat-form-field {
+    width: 100%;
+}
+
+.std-submit-button {
+    background-color: blue;
+    color: white;
+    float: right;
+}

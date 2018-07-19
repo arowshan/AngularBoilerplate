@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,22 +11,26 @@ export class HttpClientService {
 
   constructor(private http: HttpClient) { }
 
+  setupUrl(url) {
+    return environment.backendUrl + url;
+  }
+
   get(url, options?) {
-    return this.http.get(url, options).pipe(
+    return this.http.get(this.setupUrl(url), options).pipe(
       catchError(this.handleError)
     );
   }
 
   post(url, options?) {
-    return this.http.post(url, options).pipe(
+    return this.http.post(this.setupUrl(url), options).pipe(
       catchError(this.handleError)
-    )
+    );
   }
 
   delete(url, options?) {
-    return this.http.delete(url, options).pipe(
+    return this.http.delete(this.setupUrl(url), options).pipe(
       catchError(this.handleError)
-    )
+    );
   }
 
 

@@ -1,3 +1,15 @@
-<p>
-  signin works!
-</p>
+<div class="signin-container" fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
+  <mat-card class="std-card">
+
+    <form novalidate (ngSubmit)="onSigninSubmit(signinForm)" [formGroup]="signinForm" class="std-full-width-form">      
+      <mat-form-field>
+        <input matInput placeholder="Username or Email" formControlName="usernameOrEmail" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password" required>
+      </mat-form-field>
+      <button type="submit" mat-raised-button class="std-submit-button" [disabled]="signinForm.invalid">Sing In</button>
+    </form>
+
+  </mat-card>
+</div>
