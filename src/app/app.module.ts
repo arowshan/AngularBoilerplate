@@ -6,21 +6,57 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
-// Components
-import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
 // End of Components
 
 import { AppRoutingModule } from 'src/app/app.routing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Material Modules
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
+import {
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule,
+  MatFormFieldModule
+} from '@angular/material';
+
+// Components
+import { SignupComponent } from './signup/signup.component';
+import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
+import { GridLayoutComponent } from './grid-layout/grid-layout.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 // End of Material Modules
 
@@ -29,7 +65,9 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     SignupComponent,
     SigninComponent,
-    HomeComponent
+    HomeComponent,
+    GridLayoutComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +76,42 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     ReactiveFormsModule,
     // Materials
-    MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    MatFormFieldModule,
     // End of Materials
     FlexLayoutModule
   ],
