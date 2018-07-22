@@ -59,6 +59,7 @@ import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginLogoutButtonComponent } from './login-logout-button/login-logout-button.component';
+import { SideMainLayoutComponent } from './layouts/side-main-layout/side-main-layout.component';
 
 // End of Material Modules
 
@@ -71,7 +72,8 @@ import { LoginLogoutButtonComponent } from './login-logout-button/login-logout-b
     GridLayoutComponent,
     NavbarComponent,
     FooterComponent,
-    LoginLogoutButtonComponent
+    LoginLogoutButtonComponent,
+    SideMainLayoutComponent
   ],
   imports: [
     BrowserModule,

@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class LoginLogoutButtonComponent implements OnInit {
 
-  isLoggedIn = false;
+  // Initialize to auth.service value of loggedIn
+  isLoggedIn = this.authService.isLoggedIn;
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    this.authService.isLoggedInEmitter.subscribe(res => this.isLoggedIn = res);
+    // listen for changes to isLoggedIn of auth.service
+    this.authService.isLoggedInEmitter.subscribe(res => {
+      this.isLoggedIn = res;
+    });
   }
 
   login() {
@@ -23,7 +28,6 @@ export class LoginLogoutButtonComponent implements OnInit {
   logout() {
     this.authService.logout().subscribe(res => {
       this.isLoggedIn = res;
-      alert('logged out successfully');
     },
     error => {
       alert('An error occured');
