@@ -57,6 +57,7 @@ import { SigninComponent } from './signin/signin.component';
 import { HomeComponent } from './home/home.component';
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 // End of Material Modules
 
@@ -67,7 +68,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SigninComponent,
     HomeComponent,
     GridLayoutComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

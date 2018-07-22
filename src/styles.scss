@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import './pattern-library/std-classes.scss';
+@import './pattern-library/dimensions.scss';
+@import './pattern-library/palette.scss';
 
 /* Full Screen */
 html, body, .viewport {
