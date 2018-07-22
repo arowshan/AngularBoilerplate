@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { tap, delay } from 'rxjs/operators'
 import { ApiService } from '../apis/api.service';
@@ -9,6 +9,9 @@ import { ApiService } from '../apis/api.service';
 export class AuthService {
   isLoggedIn = false;
 
+  // To let service consumers know when loggedIn status changes
+  isLoggedInEmitter: EventEmitter<boolean> = new EventEmitter();
+
   // store the URL so we can redirect after logging in
   redirectUrl: string;
 
@@ -16,6 +19,7 @@ export class AuthService {
     if(localStorage.getItem('accessToken')) {
       this.isLoggedIn = true;
     }
+    this.isLoggedInEmitter.emit(this.isLoggedIn);
   }
 
   login(signinForm): Observable<boolean> {
@@ -34,11 +38,15 @@ export class AuthService {
       }
     });
 
+    this.isLoggedInEmitter.emit(this.isLoggedIn);
+
     return of(this.isLoggedIn);
   }
 
-  logout(): void {
+  logout(): Observable<boolean> {
     localStorage.clear();
     this.isLoggedIn = false;
+    this.isLoggedInEmitter.emit(this.isLoggedIn);
+    return of(this.isLoggedIn);
   }
 }

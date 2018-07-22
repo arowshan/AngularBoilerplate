@@ -10,3 +10,12 @@
     position: sticky;
     top: 0;
 }
+
+.test {
+    align-self: flex-end;
+    align-content: flex-end;
+    align-items: flex-end;
+    text-align: end;
+    justify-content: flex-end;
+    display: flex;
+}

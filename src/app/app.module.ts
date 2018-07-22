@@ -58,6 +58,7 @@ import { HomeComponent } from './home/home.component';
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginLogoutButtonComponent } from './login-logout-button/login-logout-button.component';
 
 // End of Material Modules
 
@@ -69,7 +70,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     GridLayoutComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LoginLogoutButtonComponent
   ],
   imports: [
     BrowserModule,
