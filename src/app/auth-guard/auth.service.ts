@@ -26,7 +26,7 @@ export class AuthService {
   login(signinForm): Observable<boolean> {
 
     const resp = of({
-      'accessToken':'dfgh',
+      'accessToken': 'dfgh',
       'success': true
     });
 
@@ -66,5 +66,5 @@ export class AuthService {
     
     return of(this.isLoggedIn);
   }
-  
+
 }

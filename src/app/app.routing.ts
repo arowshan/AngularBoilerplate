@@ -19,7 +19,7 @@ export const appRoutes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
     { path: 'item', component: ItemComponent,  children: [
         { path: ':id', component: ItemComponent },
-        // { path: '', component: ItemComponent }
+        { path: '', pathMatch: 'full' , redirectTo: '1' }
       ]
     },
     { path: '**', component: PageNotFoundComponent }
