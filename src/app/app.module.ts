@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // End of Components
 
@@ -62,6 +62,8 @@ import { LoginLogoutButtonComponent } from './login-logout-button/login-logout-b
 import { SideMainLayoutComponent } from './layouts/side-main-layout/side-main-layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ItemComponent } from './item/item.component';
+import { SideNavLayoutComponent } from './layouts/side-nav-layout/side-nav-layout.component';
+
 
 // End of Material Modules
 
@@ -77,7 +79,8 @@ import { ItemComponent } from './item/item.component';
     LoginLogoutButtonComponent,
     SideMainLayoutComponent,
     PageNotFoundComponent,
-    ItemComponent
+    ItemComponent,
+    SideNavLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +88,7 @@ import { ItemComponent } from './item/item.component';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     // Materials
     MatAutocompleteModule,
     MatBadgeModule,

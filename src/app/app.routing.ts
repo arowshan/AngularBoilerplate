@@ -8,6 +8,7 @@ import { CanDeactivateGuardService } from './auth-guard/can-deactivate-guard.ser
 import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ItemComponent } from './item/item.component';
+import { SideNavLayoutComponent } from './layouts/side-nav-layout/side-nav-layout.component';
 
 
 
@@ -16,7 +17,10 @@ export const appRoutes = [
     { path: 'signup', component: SignupComponent  },
     { path: 'signin', component: SigninComponent  },
     { path: 'layout', component: GridLayoutComponent  },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuardService] },
+    { path: 'home', component: HomeComponent, canActivate: [AuthGuardService], children: [
+			{ path: '/s', pathMatch: 'full' , component: SideNavLayoutComponent, outlet: 'home' },
+    	] 
+    },
     { path: 'item', component: ItemComponent,  children: [
         { path: ':id', component: ItemComponent },
         { path: '', pathMatch: 'full' , redirectTo: '1' }
