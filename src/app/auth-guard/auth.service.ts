@@ -32,7 +32,6 @@ export class AuthService {
 
     // this.apiService.signin(signinForm).subscribe(res => {
       resp.subscribe(res => {
-        console.log(res);
       if(res.success){
         localStorage.setItem('accessToken', res.accessToken);
         this.isLoggedIn = true;
@@ -49,13 +48,23 @@ export class AuthService {
     this.isLoggedIn = false;
     this.isLoggedInEmitter.emit(this.isLoggedIn);
 
-    console.log(this.router);
+    // console.log(this.router);
 
-    const currentRouteConfig = this.router.config.find(f => f.path === this.router.url.substr(1));
-    if(currentRouteConfig.canActivate) {
+    // Only redirect if current page requires user to be logged in
+    let hasGuard = false;
+    try {
+      if(this.router.routerState.snapshot.root.firstChild.routeConfig.canActivate) {
+        hasGuard = true;
+      }
+    } catch(e) {
+      console.log('This route does not have a guard');
+    }
+    
+    if(hasGuard) {
       this.router.navigateByUrl('/');
     }
     
     return of(this.isLoggedIn);
   }
+  
 }

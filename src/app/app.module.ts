@@ -60,6 +60,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginLogoutButtonComponent } from './login-logout-button/login-logout-button.component';
 import { SideMainLayoutComponent } from './layouts/side-main-layout/side-main-layout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ItemComponent } from './item/item.component';
 
 // End of Material Modules
 
@@ -73,7 +75,9 @@ import { SideMainLayoutComponent } from './layouts/side-main-layout/side-main-la
     NavbarComponent,
     FooterComponent,
     LoginLogoutButtonComponent,
-    SideMainLayoutComponent
+    SideMainLayoutComponent,
+    PageNotFoundComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,
