@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators'
+import { tap, delay } from 'rxjs/operators';
 import { ApiService } from '../apis/api.service';
 import { Router } from '@angular/router';
 
@@ -17,22 +17,21 @@ export class AuthService {
   redirectUrl: string;
 
   constructor(private apiService: ApiService, private router: Router) {
-    if(localStorage.getItem('accessToken')) {
+    if (localStorage.getItem('accessToken')) {
       this.isLoggedIn = true;
     }
     this.isLoggedInEmitter.emit(this.isLoggedIn);
   }
 
   login(signinForm): Observable<boolean> {
-
     const resp = of({
-      'accessToken': 'dfgh',
-      'success': true
+      accessToken: 'dfgh',
+      success: true
     });
 
     // this.apiService.signin(signinForm).subscribe(res => {
-      resp.subscribe(res => {
-      if(res.success){
+    resp.subscribe(res => {
+      if (res.success) {
         localStorage.setItem('accessToken', res.accessToken);
         this.isLoggedIn = true;
       }
@@ -53,18 +52,23 @@ export class AuthService {
     // Only redirect if current page requires user to be logged in
     let hasGuard = false;
     try {
-      if(this.router.routerState.snapshot.root.firstChild.routeConfig.canActivate) {
+      if (
+        // Check for current route guard or child guard
+        this.router.routerState.snapshot.root.firstChild.routeConfig
+          .canActivate ||
+        this.router.routerState.snapshot.root.firstChild.routeConfig
+          .canActivateChild
+      ) {
         hasGuard = true;
       }
-    } catch(e) {
+    } catch (e) {
       console.log('This route does not have a guard');
     }
-    
-    if(hasGuard) {
+
+    if (hasGuard) {
       this.router.navigateByUrl('/');
     }
-    
+
     return of(this.isLoggedIn);
   }
-
 }

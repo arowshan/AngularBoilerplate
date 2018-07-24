@@ -15,11 +15,15 @@ export const appRoutes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
-  { path: 'layout', component: GridLayoutComponent },
+  {
+    path: 'layout',
+    component: GridLayoutComponent,
+    canActivate: [AuthGuardService]
+  },
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuardService],
+    canActivateChild: [AuthGuardService],
     children: homeRoutes
   },
   {

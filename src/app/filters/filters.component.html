@@ -1,0 +1,15 @@
+<form novalidate (ngSubmit)="onSubmit(filterForm)" [formGroup]="filterForm">
+  <mat-list role="list">
+    <mat-checkbox color="primary" formControlName="item1">
+      <mat-list-item role="listitem">Item 1</mat-list-item>
+    </mat-checkbox>
+    <mat-checkbox color="primary" formControlName="item2">
+      <mat-list-item role="listitem">Item 2</mat-list-item>
+    </mat-checkbox>
+    <mat-checkbox color="primary" formControlName="item3">
+      <mat-list-item role="listitem">Item 3</mat-list-item>
+    </mat-checkbox>
+  </mat-list>
+
+  <button type="submit" mat-button class="filter-submit" [disabled]="filterForm.invalid">Apply</button>
+</form>

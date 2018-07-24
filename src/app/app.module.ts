@@ -66,6 +66,7 @@ import { SideNavLayoutComponent } from "./layouts/side-nav-layout/side-nav-layou
 import { HomeRoutingModule } from "./home/home.routing";
 import { GenericFormComponent } from './generic-form/generic-form.component';
 import { SideMainSideLayoutComponent } from './layouts/side-main-side-layout/side-main-side-layout.component';
+import { FiltersComponent } from './filters/filters.component';
 
 // End of Material Modules
 
@@ -84,7 +85,8 @@ import { SideMainSideLayoutComponent } from './layouts/side-main-side-layout/sid
     ItemComponent,
     SideNavLayoutComponent,
     GenericFormComponent,
-    SideMainSideLayoutComponent
+    SideMainSideLayoutComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,
