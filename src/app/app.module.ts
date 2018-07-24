@@ -63,7 +63,7 @@ import { SideMainLayoutComponent } from './layouts/side-main-layout/side-main-la
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ItemComponent } from './item/item.component';
 import { SideNavLayoutComponent } from './layouts/side-nav-layout/side-nav-layout.component';
-
+import { HomeRoutingModule } from './home/home.routing';
 
 // End of Material Modules
 
@@ -87,6 +87,7 @@ import { SideNavLayoutComponent } from './layouts/side-nav-layout/side-nav-layou
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    HomeRoutingModule,
     ReactiveFormsModule,
     FormsModule,
     // Materials
@@ -132,4 +133,4 @@ import { SideNavLayoutComponent } from './layouts/side-nav-layout/side-nav-layou
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

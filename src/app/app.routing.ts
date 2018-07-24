@@ -9,30 +9,33 @@ import { GridLayoutComponent } from './grid-layout/grid-layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ItemComponent } from './item/item.component';
 import { SideNavLayoutComponent } from './layouts/side-nav-layout/side-nav-layout.component';
-import { HOME_ROUTES } from './home/home.routing';
-
-
+import { homeRoutes } from './home/home.routing';
 
 export const appRoutes = [
-    { path: '', pathMatch: 'full' , redirectTo: 'signin' },
-    { path: 'signup', component: SignupComponent  },
-    { path: 'signin', component: SigninComponent  },
-    { path: 'layout', component: GridLayoutComponent  },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuardService], children: HOME_ROUTES },
-    { path: 'item', component: ItemComponent,  children: [
-        { path: ':id', component: ItemComponent },
-        { path: '', pathMatch: 'full' , redirectTo: '1' }
-      ]
-    },
-    { path: '**', component: PageNotFoundComponent }
-    // { path: 'home', component: HomeComponent, canActivate: [AuthGuardService], canDeactivate: [CanDeactivateGuardService] },
-
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'layout', component: GridLayoutComponent },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuardService],
+    children: homeRoutes
+  },
+  {
+    path: 'item',
+    component: ItemComponent,
+    children: [
+      { path: ':id', component: ItemComponent },
+      { path: '', pathMatch: 'full', redirectTo: '1' }
+    ]
+  },
+  { path: '**', component: PageNotFoundComponent }
+  // { path: 'home', component: HomeComponent, canActivate: [AuthGuardService], canDeactivate: [CanDeactivateGuardService] },
 ];
 
 @NgModule({
-    imports : [
-        RouterModule.forRoot(appRoutes)
-    ],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
