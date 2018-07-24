@@ -1,25 +1,29 @@
-@import './palette.scss';
+@import "./palette.scss";
 
 .std-card {
-    width: 400px;
+  width: 400px;
 }
 
-.std-full-width-form>mat-form-field {
-    width: 100%;
+.std-full-width-form > mat-form-field {
+  width: 100%;
 }
 
 .std-submit-button {
-    background-color: blue;
-    color: white;
-    float: right;
+  background-color: blue;
+  color: white;
+  float: right;
 }
-
-
 
 // PADDINGs
 .std-10px-padding {
-    padding: 10px;
+  padding: 10px;
 }
 .std-20px-padding {
-    padding: 20px;
+  padding: 20px;
+}
+.std-10px-vertical-padding {
+  padding: 10px 0px 10px 0px;
+}
+.std-20px-vertical-padding {
+  padding: 20px 0px 20px 0px;
 }

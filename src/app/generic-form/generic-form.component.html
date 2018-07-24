@@ -35,6 +35,7 @@
 
       <!-- basic autocomplete -->
       <mat-form-field appearance="outline">
+        <mat-label>State</mat-label>
         <input type="text" placeholder="State" aria-label="Number" matInput formControlName="state" [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option value="California">California</mat-option>
@@ -43,14 +44,28 @@
       </mat-form-field>
 
       <!-- Date picker -->
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
 
-      <mat-checkbox formControlName="isCitizen">Are you a citizen?</mat-checkbox>
+      <!-- Checkbox -->
+      <mat-checkbox formControlName="isCitizen" color="primary">Are you a citizen?</mat-checkbox>
+
+
+      <!-- Radio buttons -->
+      <div class="std-20px-vertical-padding">
+        <mat-radio-group>
+          <mat-radio-button value="1" color="primary">Option 1</mat-radio-button>
+          <mat-radio-button value="2" color="primary">Option 2</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+
+
+
 
 
       <button type="submit" mat-raised-button class="std-submit-button" [disabled]="form.invalid">Submit</button>

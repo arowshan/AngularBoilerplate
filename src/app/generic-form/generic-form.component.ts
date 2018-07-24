@@ -34,6 +34,7 @@ export class GenericFormComponent implements OnInit {
   onSubmit(form) {
     console.log(form);
 
+    // Moment.js example
     console.log(moment(this.form.value.date).format('MMMM Do YYYY, h:mm:ss a'));
 
     // Programmatically change input value
