@@ -65,6 +65,7 @@ import { ItemComponent } from "./item/item.component";
 import { SideNavLayoutComponent } from "./layouts/side-nav-layout/side-nav-layout.component";
 import { HomeRoutingModule } from "./home/home.routing";
 import { GenericFormComponent } from './generic-form/generic-form.component';
+import { SideMainSideLayoutComponent } from './layouts/side-main-side-layout/side-main-side-layout.component';
 
 // End of Material Modules
 
@@ -82,7 +83,8 @@ import { GenericFormComponent } from './generic-form/generic-form.component';
     PageNotFoundComponent,
     ItemComponent,
     SideNavLayoutComponent,
-    GenericFormComponent
+    GenericFormComponent,
+    SideMainSideLayoutComponent
   ],
   imports: [
     BrowserModule,
