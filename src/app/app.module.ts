@@ -67,6 +67,9 @@ import { HomeRoutingModule } from "./home/home.routing";
 import { GenericFormComponent } from './generic-form/generic-form.component';
 import { SideMainSideLayoutComponent } from './layouts/side-main-side-layout/side-main-side-layout.component';
 import { FiltersComponent } from './filters/filters.component';
+import { CardsGridComponent } from './cards-grid/cards-grid.component';
+import { CardWithImageComponent } from './card-designs/card-with-image/card-with-image.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 // End of Material Modules
 
@@ -86,7 +89,10 @@ import { FiltersComponent } from './filters/filters.component';
     SideNavLayoutComponent,
     GenericFormComponent,
     SideMainSideLayoutComponent,
-    FiltersComponent
+    FiltersComponent,
+    CardsGridComponent,
+    CardWithImageComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

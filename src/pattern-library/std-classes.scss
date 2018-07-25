@@ -1,4 +1,4 @@
-@import "./palette.scss";
+@import './palette.scss';
 
 .std-card {
   width: 400px;
@@ -33,4 +33,12 @@
 }
 .std-20px-vertical-padding {
   padding: 20px 0px 20px 0px;
+}
+
+// MARGINs
+.std-10px-margin {
+  margin: 10px;
+}
+.std-20px-margin {
+  margin: 20px;
 }
