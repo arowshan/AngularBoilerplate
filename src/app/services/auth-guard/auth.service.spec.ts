@@ -1,7 +1,7 @@
 import { TestBed, inject, ComponentFixture } from '@angular/core/testing';
 
 import { AuthService } from './auth.service';
-import { SigninComponent } from '../signin/signin.component';
+import { SigninComponent } from '../../components/signin/signin.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';

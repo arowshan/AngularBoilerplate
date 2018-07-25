@@ -1,15 +1,15 @@
-import { BrowserModule } from "@angular/platform-browser";
-import { NgModule } from "@angular/core";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from "./app.component";
-import { HttpClientModule } from "@angular/common/http";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // End of Components
 
-import { AppRoutingModule } from "src/app/app.routing";
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { AppRoutingModule } from 'src/app/app.routing';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Material Modules
 import {
@@ -49,26 +49,26 @@ import {
   MatTooltipModule,
   MatTreeModule,
   MatFormFieldModule
-} from "@angular/material";
+} from '@angular/material';
 
 // Components
-import { SignupComponent } from "./signup/signup.component";
-import { SigninComponent } from "./signin/signin.component";
-import { HomeComponent } from "./home/home.component";
-import { GridLayoutComponent } from "./grid-layout/grid-layout.component";
-import { NavbarComponent } from "./navbar/navbar.component";
-import { FooterComponent } from "./footer/footer.component";
-import { LoginLogoutButtonComponent } from "./login-logout-button/login-logout-button.component";
-import { SideMainLayoutComponent } from "./layouts/side-main-layout/side-main-layout.component";
-import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { ItemComponent } from "./item/item.component";
-import { SideNavLayoutComponent } from "./layouts/side-nav-layout/side-nav-layout.component";
-import { HomeRoutingModule } from "./home/home.routing";
-import { GenericFormComponent } from './generic-form/generic-form.component';
-import { SideMainSideLayoutComponent } from './layouts/side-main-side-layout/side-main-side-layout.component';
-import { FiltersComponent } from './filters/filters.component';
-import { CardsGridComponent } from './cards-grid/cards-grid.component';
-import { CardWithImageComponent } from './card-designs/card-with-image/card-with-image.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { HomeComponent } from './components/home/home.component';
+import { GridLayoutComponent } from './components/layouts/grid-layout/grid-layout.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { LoginLogoutButtonComponent } from './components/login-logout-button/login-logout-button.component';
+import { SideMainLayoutComponent } from './components/layouts/side-main-layout/side-main-layout.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ItemComponent } from './components/item/item.component';
+import { SideNavLayoutComponent } from './components/layouts/side-nav-layout/side-nav-layout.component';
+import { HomeRoutingModule } from './components/home/home.routing';
+import { GenericFormComponent } from './components/generic-form/generic-form.component';
+import { SideMainSideLayoutComponent } from './components/layouts/side-main-side-layout/side-main-side-layout.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { CardsGridComponent } from './components/cards-grid/cards-grid.component';
+import { CardWithImageComponent } from './components/card-with-image/card-with-image.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
 
 // End of Material Modules

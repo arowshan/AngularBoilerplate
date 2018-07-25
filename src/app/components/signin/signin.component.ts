@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { ApiService } from "../apis/api.service";
+import { ApiService } from "../../services/apis/api.service";
 import { Router } from "@angular/router";
-import { AuthService } from "../auth-guard/auth.service";
+import { AuthService } from "../../services/auth-guard/auth.service";
 
 @Component({
   selector: "app-signin",

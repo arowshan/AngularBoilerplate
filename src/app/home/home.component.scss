@@ -1,5 +1,0 @@
-@import '../../pattern-library/dimensions.scss';
-
-.main-content {
-    min-height: calc(100% - #{$navbarHeight} - #{$footerHeight});
-}

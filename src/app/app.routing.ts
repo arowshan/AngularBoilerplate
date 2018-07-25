@@ -1,15 +1,15 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { SignupComponent } from './signup/signup.component';
-import { SigninComponent } from './signin/signin.component';
-import { HomeComponent } from './home/home.component';
-import { AuthGuardService } from './auth-guard/auth-guard.service';
-import { CanDeactivateGuardService } from './auth-guard/can-deactivate-guard.service';
-import { GridLayoutComponent } from './grid-layout/grid-layout.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ItemComponent } from './item/item.component';
-import { SideNavLayoutComponent } from './layouts/side-nav-layout/side-nav-layout.component';
-import { homeRoutes } from './home/home.routing';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { HomeComponent } from './components/home/home.component';
+import { AuthGuardService } from './services/auth-guard/auth-guard.service';
+import { CanDeactivateGuardService } from './services/auth-guard/can-deactivate-guard.service';
+import { GridLayoutComponent } from './components/layouts/grid-layout/grid-layout.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ItemComponent } from './components/item/item.component';
+import { SideNavLayoutComponent } from './components/layouts/side-nav-layout/side-nav-layout.component';
+import { homeRoutes } from './components/home/home.routing';
 
 export const appRoutes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },

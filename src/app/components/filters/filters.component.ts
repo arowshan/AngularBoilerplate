@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../apis/api.service';
+import { ApiService } from '../../services/apis/api.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({

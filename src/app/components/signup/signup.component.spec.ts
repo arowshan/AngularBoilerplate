@@ -8,11 +8,11 @@ import {
 
 import { SignupComponent } from './signup.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { AuthService } from '../auth-guard/auth.service';
+import { AuthService } from '../../services/auth-guard/auth.service';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ApiService } from '../apis/api.service';
+import { ApiService } from '../../services/apis/api.service';
 import { Observable, of } from 'rxjs';
 
 describe('SignupComponent', () => {

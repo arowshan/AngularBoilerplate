@@ -6,9 +6,7 @@ import { apiUrls } from './api-list';
   providedIn: 'root'
 })
 export class ApiService {
-
-  constructor(private http: HttpClientService) { }
-
+  constructor(private http: HttpClientService) {}
 
   signup(params) {
     return this.http.get(apiUrls.signup, params);
@@ -17,6 +15,4 @@ export class ApiService {
   signin(params) {
     return this.http.post(apiUrls.signin, params);
   }
-
-
 }
