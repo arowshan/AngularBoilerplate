@@ -1,7 +1,7 @@
 <div class="signup-container" fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
   <mat-card class="std-card">
 
-    <form novalidate (ngSubmit)="onSignupSubmit(signupForm)" [formGroup]="signupForm" class="std-full-width-form">      
+    <form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form" class="std-full-width-form">
       <mat-form-field>
         <input matInput placeholder="Full Name" formControlName="name" required>
       </mat-form-field>
@@ -14,7 +14,7 @@
       <mat-form-field>
         <input matInput placeholder="Password" formControlName="password" type="password" required>
       </mat-form-field>
-      <button type="submit" mat-raised-button class="std-submit-button" [disabled]="signupForm.invalid">Sing Up</button>
+      <button type="submit" mat-raised-button class="std-submit-button" [disabled]="form.invalid">Sing Up</button>
     </form>
 
   </mat-card>

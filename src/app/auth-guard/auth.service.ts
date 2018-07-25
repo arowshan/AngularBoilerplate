@@ -1,11 +1,11 @@
-import { Injectable, EventEmitter } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { tap, delay } from 'rxjs/operators';
-import { ApiService } from '../apis/api.service';
-import { Router } from '@angular/router';
+import { Injectable, EventEmitter } from "@angular/core";
+import { Observable, of } from "rxjs";
+import { tap, delay } from "rxjs/operators";
+import { ApiService } from "../apis/api.service";
+import { Router } from "@angular/router";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
   isLoggedIn = false;
@@ -17,7 +17,7 @@ export class AuthService {
   redirectUrl: string;
 
   constructor(private apiService: ApiService, private router: Router) {
-    if (localStorage.getItem('accessToken')) {
+    if (localStorage.getItem("accessToken")) {
       this.isLoggedIn = true;
     }
     this.isLoggedInEmitter.emit(this.isLoggedIn);
@@ -25,14 +25,14 @@ export class AuthService {
 
   login(signinForm): Observable<boolean> {
     const resp = of({
-      accessToken: 'dfgh',
+      accessToken: "dfgh",
       success: true
     });
 
     // this.apiService.signin(signinForm).subscribe(res => {
     resp.subscribe(res => {
       if (res.success) {
-        localStorage.setItem('accessToken', res.accessToken);
+        localStorage.setItem("accessToken", res.accessToken);
         this.isLoggedIn = true;
       }
     });
@@ -62,11 +62,11 @@ export class AuthService {
         hasGuard = true;
       }
     } catch (e) {
-      console.log('This route does not have a guard');
+      console.log("This route does not have a guard");
     }
 
     if (hasGuard) {
-      this.router.navigateByUrl('/');
+      this.router.navigateByUrl("/");
     }
 
     return of(this.isLoggedIn);
