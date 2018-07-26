@@ -1,3 +1,5 @@
-<p>
-  carousel works!
-</p>
+<div fxLayout="row" fxLayoutAlign="start center">
+  <button mat-fab (click)="previous()" class="std-basic-button" color [disabled]="currentImageIndex==0">Prev</button>
+  <img [src]="images[currentImageIndex]" class="std-20px-margin main-carousel-image" />
+  <button mat-fab (click)="next()" class="std-basic-button" color [disabled]="currentImageIndex==images.length-1">Next</button>
+</div>
