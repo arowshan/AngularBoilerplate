@@ -62,14 +62,14 @@ import { LoginLogoutButtonComponent } from './components/login-logout-button/log
 import { SideMainLayoutComponent } from './components/layouts/side-main-layout/side-main-layout.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ItemComponent } from './components/item/item.component';
-import { SideNavLayoutComponent } from './components/layouts/side-nav-layout/side-nav-layout.component';
-import { HomeRoutingModule } from './components/home/home.routing';
 import { GenericFormComponent } from './components/generic-form/generic-form.component';
 import { SideMainSideLayoutComponent } from './components/layouts/side-main-side-layout/side-main-side-layout.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { CardsGridComponent } from './components/cards-grid/cards-grid.component';
 import { CardWithImageComponent } from './components/card-with-image/card-with-image.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { SidenavLinksComponent } from './components/layouts/sidenav-links/sidenav-links.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 // End of Material Modules
 
@@ -86,13 +86,14 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     SideMainLayoutComponent,
     PageNotFoundComponent,
     ItemComponent,
-    SideNavLayoutComponent,
     GenericFormComponent,
     SideMainSideLayoutComponent,
     FiltersComponent,
     CardsGridComponent,
     CardWithImageComponent,
-    TruncatePipe
+    TruncatePipe,
+    SidenavLinksComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

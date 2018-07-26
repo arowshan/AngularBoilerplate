@@ -1,5 +1,21 @@
 <app-navbar></app-navbar>
+
 <div class="main-content">
+
+    <!-- Only one of the following should be present -->
+    <!-- 1- Layout for static sidenav with links -->
+    <!-- <div fxLayout="row" fxFlexFill>
+        <div fxFlex="20" fxHide.lt-md class="std-20px-padding">
+            <h2 class="mat-h2">The quick brown fox jumps over the lazy dog.</h2>
+        </div>
+        <div fxFlex class="std-20px-padding">
+            <router-outlet></router-outlet>
+        </div>
+    </div> -->
+
+    <!-- 2- Other Layouts that fill the page -->
     <router-outlet></router-outlet>
+
 </div>
+
 <app-footer></app-footer>

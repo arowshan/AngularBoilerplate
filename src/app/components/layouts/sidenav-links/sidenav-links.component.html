@@ -1,0 +1,20 @@
+<div fxLayout="row" class="sidenav-container" fxFlexFill>
+  <div fxFlex="20" class="sidenav std-20px-padding" fxFlexFill>
+    <mat-list role="list" fxLayout="column" fxLayoutAlign="start start">
+      <a routerLink="carousel">
+        <mat-list-item role="listitem">Carousel</mat-list-item>
+      </a>
+      <a routerLink="genericform">
+        <mat-list-item role="listitem">Form</mat-list-item>
+      </a>
+      <a routerLink="barchart">
+        <mat-list-item role="listitem">Bar Chart</mat-list-item>
+      </a>
+    </mat-list>
+  </div>
+
+  <div fxFlex class="std-20px-padding" fxFlexFill>
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

@@ -2,4 +2,8 @@
 
 .main-content {
   min-height: calc(100% - #{$navbarHeight} - #{$footerHeight});
+
+  // For full height
+  // **CAUTION: this will bring footer up
+  // height: calc(100% - #{$navbarHeight} - #{$footerHeight});
 }

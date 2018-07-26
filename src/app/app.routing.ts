@@ -8,7 +8,6 @@ import { CanDeactivateGuardService } from './services/auth-guard/can-deactivate-
 import { GridLayoutComponent } from './components/layouts/grid-layout/grid-layout.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ItemComponent } from './components/item/item.component';
-import { SideNavLayoutComponent } from './components/layouts/side-nav-layout/side-nav-layout.component';
 import { homeRoutes } from './components/home/home.routing';
 
 export const appRoutes = [
