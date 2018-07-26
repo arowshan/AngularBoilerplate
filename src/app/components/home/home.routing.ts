@@ -8,10 +8,6 @@ import { CarouselComponent } from '../carousel/carousel.component';
 
 export const homeRoutes: Routes = [
   {
-    path: 'genericform',
-    component: GenericFormComponent
-  },
-  {
     path: 'sidemain',
     component: SideMainLayoutComponent
   },
@@ -19,6 +15,12 @@ export const homeRoutes: Routes = [
   {
     path: 'sidenavlinks',
     component: SidenavLinksComponent,
-    children: [{ path: 'carousel', component: CarouselComponent }]
+    children: [
+      { path: 'carousel', component: CarouselComponent },
+      {
+        path: 'genericform',
+        component: GenericFormComponent
+      }
+    ]
   }
 ];
