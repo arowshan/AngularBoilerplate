@@ -5,6 +5,7 @@ import { SideMainLayoutComponent } from '../layouts/side-main-layout/side-main-l
 import { SideMainSideLayoutComponent } from '../layouts/side-main-side-layout/side-main-side-layout.component';
 import { SidenavLinksComponent } from '../layouts/sidenav-links/sidenav-links.component';
 import { CarouselComponent } from '../carousel/carousel.component';
+import { MiscComponent } from '../misc/misc.component';
 
 export const homeRoutes: Routes = [
   {
@@ -20,7 +21,8 @@ export const homeRoutes: Routes = [
       {
         path: 'genericform',
         component: GenericFormComponent
-      }
+      },
+      { path: 'misc', component: MiscComponent }
     ]
   }
 ];

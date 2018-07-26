@@ -70,6 +70,8 @@ import { CardWithImageComponent } from './components/card-with-image/card-with-i
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { SidenavLinksComponent } from './components/layouts/sidenav-links/sidenav-links.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
+import { MiscComponent } from './components/misc/misc.component';
 
 // End of Material Modules
 
@@ -93,7 +95,9 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     CardWithImageComponent,
     TruncatePipe,
     SidenavLinksComponent,
-    CarouselComponent
+    CarouselComponent,
+    ModalDialogComponent,
+    MiscComponent
   ],
   imports: [
     BrowserModule,
@@ -143,6 +147,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
     FlexLayoutModule
   ],
   providers: [],
+  entryComponents: [ModalDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
