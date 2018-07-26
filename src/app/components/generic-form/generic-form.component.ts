@@ -24,8 +24,10 @@ export class GenericFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required]],
       country: ['', [Validators.required]],
+      email: ['', [Validators.email]],
       comments: [''],
       state: [''],
+      phoneNumber: ['', [Validators.pattern('^((\\+91-?)|0)?[0-9]{10}$')]],
       isCitizen: [true],
       date: ['']
     });

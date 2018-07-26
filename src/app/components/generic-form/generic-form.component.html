@@ -9,6 +9,18 @@
         <input matInput formControlName="name" required>
       </mat-form-field>
 
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput id="phoneNumber" formControlName="phoneNumber">
+        <mat-error *ngIf="form.get('phoneNumber').hasError('pattern')">wrong pattern</mat-error>
+      </mat-form-field>
+
+
 
       <!-- Select Options -->
       <mat-form-field appearance="outline">
@@ -17,6 +29,7 @@
           <mat-option value="canada">Canada</mat-option>
           <mat-option value="mexico">Mexico</mat-option>
         </mat-select>
+        <mat-error>{{country?.errors}}</mat-error>
       </mat-form-field>
 
       <!-- Text Area -->
@@ -27,8 +40,8 @@
 
       <!-- Outline, Hint, Icon -->
       <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email">
+        <mat-label>Test</mat-label>
+        <input matInput placeholder="Test">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         <mat-hint>Hint</mat-hint>
       </mat-form-field>
@@ -63,7 +76,7 @@
         </mat-radio-group>
       </div>
 
-      <button type="submit" mat-raised-button class="std-submit-button" [disabled]="form.invalid">Submit</button>
+      <button type="submit" mat-raised-button class="std-submit-button">Submit</button>
     </form>
 
   </mat-card>

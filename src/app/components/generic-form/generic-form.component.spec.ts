@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GenericFormComponent } from './generic-form.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { AuthService } from '../auth-guard/auth.service';
+import { AuthService } from '../../services/auth-guard/auth.service';
 import {
   FormBuilder,
   ReactiveFormsModule,
