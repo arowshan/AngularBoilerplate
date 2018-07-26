@@ -11,15 +11,15 @@ import {
   styleUrls: ['./modal-dialog.component.scss']
 })
 export class ModalDialogComponent implements OnInit {
-  animal;
-
   constructor(
     public dialogRef: MatDialogRef<any>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
   ngOnInit() {}
-  onNoClick(): void {
+
+  ok() {
+    // Data to caller function would be pased inside close()
     this.dialogRef.close();
   }
 }
