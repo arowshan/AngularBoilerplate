@@ -1,7 +1,7 @@
 <div class="signup-container" fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
   <mat-card class="std-card">
 
-    <form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form" class="std-full-width-form">
+    <form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form" class="std-full-width-form" autocomplete="off">
       <mat-form-field>
         <input matInput placeholder="Full Name" formControlName="name" required>
       </mat-form-field>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backendUrl: 'http://httpbin.org'
+  backendUrl: 'http://localhost:3000'
 };
 
 /*

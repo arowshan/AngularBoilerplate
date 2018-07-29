@@ -76,6 +76,9 @@
         </mat-radio-group>
       </div>
 
+      <input type="file" id="file" enctype="multipart/form-data" (change)="handleFileInput($event.target.files)" multiple>
+
+
       <button type="submit" mat-raised-button class="std-submit-button">Submit</button>
     </form>
 

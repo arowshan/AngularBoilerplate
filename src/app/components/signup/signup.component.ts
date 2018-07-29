@@ -1,13 +1,13 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, Validators, FormGroup } from "@angular/forms";
-import { ApiService } from "../../services/apis/api.service";
-import { AuthService } from "../../services/auth-guard/auth.service";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { ApiService } from '../../services/apis/api.service';
+import { AuthService } from '../../services/auth-guard/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-signup",
-  templateUrl: "./signup.component.html",
-  styleUrls: ["./signup.component.scss"]
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
   form: FormGroup;
@@ -21,19 +21,19 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.isLoggedIn) {
-      this.router.navigateByUrl("/home");
+      this.router.navigateByUrl('/home');
     }
     this.form = this.formBuilder.group({
-      name: ["", [Validators.required]],
-      username: ["", [Validators.required]],
-      email: ["", [Validators.required]],
-      password: ["", [Validators.required]]
+      name: ['', [Validators.required]],
+      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]]
     });
   }
 
   onSubmit(form) {
     this.apiService.signup(form).subscribe(res => {
-      this.router.navigateByUrl("/signin");
+      this.router.navigateByUrl('/signin');
     });
   }
 }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // End of Components
@@ -72,6 +72,7 @@ import { SidenavLinksComponent } from './components/layouts/sidenav-links/sidena
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
 import { MiscComponent } from './components/misc/misc.component';
+import { HttpHeaderInterceptor } from './services/http-client/http-header-interceptor';
 
 // End of Material Modules
 
@@ -146,7 +147,13 @@ import { MiscComponent } from './components/misc/misc.component';
     // End of Materials
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpHeaderInterceptor,
+      multi: true
+    }
+  ],
   entryComponents: [ModalDialogComponent],
   bootstrap: [AppComponent]
 })

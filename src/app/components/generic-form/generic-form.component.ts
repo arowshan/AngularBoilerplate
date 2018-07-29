@@ -13,6 +13,9 @@ import * as moment from 'moment';
 export class GenericFormComponent implements OnInit {
   form: FormGroup;
 
+  // File Upload
+  fileToUpload: File = null;
+
   constructor(
     private formBuilder: FormBuilder,
     private apiService: ApiService,
@@ -41,5 +44,21 @@ export class GenericFormComponent implements OnInit {
 
     // Programmatically change input value
     this.form.controls.name.setValue('example');
+  }
+
+  handleFileInput(files: FileList) {
+    console.log(files);
+    this.fileToUpload = files.item(0);
+  }
+
+  uploadFileToActivity() {
+    this.apiService.uploadFile(this.fileToUpload).subscribe(
+      data => {
+        // do something, if upload success
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }
