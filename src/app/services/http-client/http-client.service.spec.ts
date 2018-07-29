@@ -17,7 +17,7 @@ describe('HttpClientService', () => {
   let service: HttpClientService;
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
-  let testUrl = '/data';
+  const testUrl = '/data';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -62,10 +62,6 @@ describe('HttpClientService', () => {
     const spy = spyOn(service, 'setupUrl');
     service.delete('test');
     expect(spy).toHaveBeenCalled();
-  });
-
-  it('should handle error', () => {
-    expect(service.get).toBe('string');
   });
 
   it('can test HttpClient.get', () => {
