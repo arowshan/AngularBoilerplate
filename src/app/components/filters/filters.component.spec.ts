@@ -1,6 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FiltersComponent } from './filters.component';
+import {
+  FormGroup,
+  FormsModule,
+  FormBuilder,
+  ReactiveFormsModule
+} from '@angular/forms';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { AuthService } from '../../services/auth-guard/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import {
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatCheckboxModule
+} from '@angular/material';
 
 describe('FiltersComponent', () => {
   let component: FiltersComponent;
@@ -8,9 +23,19 @@ describe('FiltersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FiltersComponent ]
-    })
-    .compileComponents();
+      declarations: [FiltersComponent],
+      imports: [
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatSelectModule,
+        MatCheckboxModule
+      ],
+      providers: [AuthService, FormBuilder],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
