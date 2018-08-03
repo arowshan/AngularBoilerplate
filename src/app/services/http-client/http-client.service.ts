@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpErrorResponse,
+  HttpHeaders
+} from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
@@ -14,21 +18,29 @@ export class HttpClientService {
     return environment.backendUrl + url;
   }
 
-  get(url, options?) {
+  getHeaders() {
+    const headers: HttpHeaders = new HttpHeaders();
+    if (localStorage.accessToken) {
+      headers.append('Authorization', `Bearer ${localStorage.accessToken}`);
+    }
+    return headers;
+  }
+
+  get(url) {
     return this.http
-      .get(this.setupUrl(url), options)
+      .get(this.setupUrl(url), { headers: this.getHeaders() })
       .pipe(catchError(this.handleError));
   }
 
-  post(url, options?) {
+  post(url, body?) {
     return this.http
-      .post(this.setupUrl(url), options)
+      .post(this.setupUrl(url), body, { headers: this.getHeaders() })
       .pipe(catchError(this.handleError));
   }
 
-  delete(url, options?) {
+  delete(url) {
     return this.http
-      .delete(this.setupUrl(url), options)
+      .delete(this.setupUrl(url), { headers: this.getHeaders() })
       .pipe(catchError(this.handleError));
   }
 

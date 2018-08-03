@@ -10,8 +10,7 @@ export class ApiService {
   constructor(private http: HttpClientService) {}
 
   signup(params) {
-    // return this.http.post(apiUrls.signup, params);
-    return this.http.get('/hello');
+    return this.http.post(apiUrls.signup, params);
   }
 
   signin(params) {

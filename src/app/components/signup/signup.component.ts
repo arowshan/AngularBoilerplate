@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.apiService.signup(form).subscribe(res => {
+    this.apiService.signup(form.value).subscribe(res => {
       this.router.navigateByUrl('/signin');
     });
   }
