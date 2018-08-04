@@ -26,7 +26,6 @@ export class MiscComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
       this.animal = result;
     });
   }

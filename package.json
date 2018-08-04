@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "cover": "ng test --watch=false --code-coverage"
+    "cover": "ng test --watch=false --code-coverage",
+    "e2e:watch": "watch \"ng e2e --port=4201\" src e2e --wait=1"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +51,7 @@
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
-    "typescript": "~2.7.2"
+    "typescript": "~2.7.2",
+    "watch": "^1.0.2"
   }
 }

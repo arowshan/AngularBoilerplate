@@ -1,4 +1,4 @@
-<div class="signin-container" fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
+<div class="signin-container" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
   <mat-card class="std-card">
 
     <form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form" class="std-full-width-form">
@@ -12,4 +12,8 @@
     </form>
 
   </mat-card>
+  <div class="register-msg">Don't have an account?
+    <a routerLink="/signup">Register Here</a>
+  </div>
+
 </div>
