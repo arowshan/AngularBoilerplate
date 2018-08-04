@@ -1,11 +1,35 @@
 @import './palette.scss';
 
+// Card
 .std-card {
   width: 400px;
+  border-radius: 10px;
 }
 
 .std-full-width-form > mat-form-field {
   width: 100%;
+}
+
+.std-card-header {
+  background: rgb(238, 242, 249);
+  padding: 20px;
+  justify-content: center;
+}
+
+.std-card-content {
+  padding: 20px;
+}
+
+.std-card-actions {
+  margin: 20px;
+  display: flex !important;
+  justify-content: center;
+}
+
+.std-card-footer {
+  display: flex !important;
+  padding: 20px;
+  justify-content: center;
 }
 
 // Buttons
@@ -13,7 +37,8 @@
 .std-submit-button {
   background-color: blue;
   color: white;
-  float: right;
+  padding: 5px 10px 5px 10px !important;
+  border-radius: 5px !important;
 }
 
 .std-basic-button {
@@ -26,6 +51,10 @@
 }
 
 // PADDINGs
+
+.std-no-padding {
+  padding: 0 !important;
+}
 .std-10px-padding {
   padding: 10px;
 }

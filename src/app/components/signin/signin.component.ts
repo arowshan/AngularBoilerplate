@@ -16,6 +16,8 @@ export class SigninComponent implements OnInit {
     message: ''
   };
 
+  title = 'Demo App';
+
   constructor(
     public authService: AuthService,
     public router: Router,
