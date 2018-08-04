@@ -22,4 +22,48 @@ export class ApiService {
     formData.append('file', fileToUpload);
     return this.http.post(apiUrls.upload, formData);
   }
+
+  getAllReservations() {
+    return this.http.get(apiUrls.getAllReservations);
+  }
+
+  createReservation() {
+    const params = {
+      reservation: {
+        employeeWitness: 'Y',
+        waiver: 'Y',
+        payment_method: 'Venmo',
+        guests: [
+          {
+            firstname: 'John',
+            lastname: 'Doe',
+            email: 'jdoe2@gmail.com',
+            phone: '415-585-5969',
+            child: 'false'
+          },
+          {
+            firstname: 'Susan',
+            lastname: 'Doe',
+            email: 'sdoe2@gmail.com',
+            phone: '415-585-5470',
+            child: 'false'
+          }
+        ],
+        rentals: [
+          {
+            item: 'Small Boat',
+            quantity: '3',
+            price: '30.00'
+          },
+          {
+            item: 'Kayak',
+            quantity: '2',
+            price: '40.00'
+          }
+        ]
+      }
+    };
+
+    return this.http.post(apiUrls.createReservation, params);
+  }
 }

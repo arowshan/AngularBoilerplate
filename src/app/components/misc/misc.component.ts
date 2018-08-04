@@ -5,6 +5,7 @@ import {
   MAT_DIALOG_DATA,
   MatDialog
 } from '@angular/material/dialog';
+import { ApiService } from '../../services/apis/api.service';
 
 @Component({
   selector: 'app-misc',
@@ -14,7 +15,7 @@ import {
 export class MiscComponent implements OnInit {
   animal;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private apiService: ApiService) {}
 
   ngOnInit() {}
 
@@ -28,5 +29,13 @@ export class MiscComponent implements OnInit {
       console.log(result);
       this.animal = result;
     });
+  }
+
+  createReservation() {
+    this.apiService.createReservation().subscribe();
+  }
+
+  getAllReservations() {
+    this.apiService.getAllReservations().subscribe();
   }
 }

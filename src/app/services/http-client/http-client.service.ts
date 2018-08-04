@@ -20,9 +20,11 @@ export class HttpClientService {
 
   getHeaders() {
     const headers: HttpHeaders = new HttpHeaders();
-    if (localStorage.accessToken) {
-      headers.append('Authorization', `Bearer ${localStorage.accessToken}`);
-    }
+    // Setting token with http interceptor
+    // Alternative
+    // if (localStorage.accessToken) {
+    //   headers.append('Authorization', `Bearer ${localStorage.accessToken}`);
+    // }
     return headers;
   }
 
@@ -34,7 +36,7 @@ export class HttpClientService {
 
   post(url, body?) {
     return this.http
-      .post(this.setupUrl(url), body, { headers: this.getHeaders() })
+      .post(this.setupUrl(url), body)
       .pipe(catchError(this.handleError));
   }
 
