@@ -2,6 +2,7 @@
   <mat-card class="std-card">
 
     <form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form" class="std-full-width-form">
+
       <mat-form-field>
         <input matInput placeholder="Username or Email" formControlName="usernameOrEmail" required>
       </mat-form-field>
@@ -10,6 +11,7 @@
       </mat-form-field>
       <button type="submit" mat-raised-button class="std-submit-button" [disabled]="form.invalid">Sing In</button>
     </form>
+    <mat-error *ngIf="res?.message">{{res?.message}}</mat-error>
 
   </mat-card>
   <div class="register-msg">Don't have an account?

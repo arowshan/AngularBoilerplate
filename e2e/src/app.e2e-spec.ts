@@ -2,7 +2,7 @@ import { AppPage } from './app.po';
 import { browser } from 'protractor';
 import { protractor } from 'protractor/built/ptor';
 
-// To delay browser between each test
+// ****To delay browser between each test
 // const origFn = browser.driver.controlFlow().execute;
 
 // browser.driver.controlFlow().execute = function() {
@@ -15,7 +15,7 @@ import { protractor } from 'protractor/built/ptor';
 
 //   return origFn.apply(browser.driver.controlFlow(), args);
 // };
-/// End of To delay browser between each test
+/// ****End of To delay browser between each test
 
 describe('workspace-project App', () => {
   let page: AppPage;

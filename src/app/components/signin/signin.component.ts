@@ -11,6 +11,10 @@ import { AuthService } from '../../services/auth-guard/auth.service';
 })
 export class SigninComponent implements OnInit {
   form: FormGroup;
+  res: SigninResponse = {
+    success: false,
+    message: ''
+  };
 
   constructor(
     public authService: AuthService,
@@ -31,18 +35,25 @@ export class SigninComponent implements OnInit {
 
   onSubmit(form) {
     this.authService.login(form).subscribe(res => {
-      this.authService.isLoggedInEmitter.subscribe(res => {
-        if (res) {
+      this.authService.isLoggedInEmitter.subscribe(response => {
+        if (response.isLoggedIn) {
           // Get the redirect URL from our auth service
           // If no redirect has been set, use the default
-          let redirect = this.authService.redirectUrl
+          const redirect = this.authService.redirectUrl
             ? this.authService.redirectUrl
             : '/home';
 
           // Redirect the user
           this.router.navigate([redirect]);
+        } else {
+          this.res.message = response.response.message;
         }
       });
     });
   }
+}
+
+export interface SigninResponse {
+  message: String;
+  success: boolean;
 }
