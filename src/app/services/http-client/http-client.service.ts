@@ -59,6 +59,6 @@ export class HttpClientService {
       console.log(error);
     }
     // return an observable with a user-facing error message
-    return throwError('Something went wrong.');
+    return throwError(error);
   }
 }

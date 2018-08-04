@@ -1,21 +1,41 @@
-<div class="signup-container" fxLayout="column" fxLayoutAlign="space-around center" fxFlexFill>
-  <mat-card class="std-card">
+<div class="signup-container" fxLayout="column" fxLayoutAlign="center center" fxFlexFill>
+  <mat-card class="std-card std-no-padding">
+    <mat-card-header class="std-card-header">
+      <mat-card-title>
+        <h2>Welcome to {{title}}</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="std-card-content">
+      <form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form" class="std-full-width-form" autocomplete="off">
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password" required>
+        </mat-form-field>
+        <mat-card-actions class="std-card-actions">
+          <button type="submit" mat-raised-button class="std-submit-button" [disabled]="form.invalid">Sing Up</button>
+        </mat-card-actions>
+      </form>
 
-    <form novalidate (ngSubmit)="onSubmit(form)" [formGroup]="form" class="std-full-width-form" autocomplete="off">
-      <mat-form-field>
-        <input matInput placeholder="Full Name" formControlName="name" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Username" formControlName="username" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Email" formControlName="email" type="email" required>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Password" formControlName="password" type="password" required>
-      </mat-form-field>
-      <button type="submit" mat-raised-button class="std-submit-button" [disabled]="form.invalid">Sing Up</button>
-    </form>
+    </mat-card-content>
+    <mat-card-footer class="std-card-footer" *ngIf="errors">
+      <mat-error class="std-card-errors" *ngFor="let err of errors">
+        {{err?.field}} {{err?.defaultMessage}}</mat-error>
+    </mat-card-footer>
 
   </mat-card>
+  <div class="register-msg">Already have an account?
+    <a [routerLink]="['/signin']">Sign In</a>
+  </div>
 </div>

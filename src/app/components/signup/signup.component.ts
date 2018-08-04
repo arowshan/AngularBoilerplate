@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   form: FormGroup;
+  errors = [];
+  title = 'Demo App';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,8 +34,13 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.apiService.signup(form.value).subscribe(res => {
-      this.router.navigateByUrl('/signin');
-    });
+    this.apiService.signup(form.value).subscribe(
+      res => {
+        this.router.navigateByUrl('/signin');
+      },
+      err => {
+        this.errors = err.error.errors;
+      }
+    );
   }
 }

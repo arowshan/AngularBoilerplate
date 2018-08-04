@@ -26,6 +26,6 @@ describe('workspace-project App', () => {
 
   it('should have a link to the sign up page', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toContain('Register Here');
+    expect(page.getParagraphText()).toContain('Create');
   });
 });

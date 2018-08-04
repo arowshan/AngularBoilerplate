@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-@import "./pattern-library/std-classes.scss";
-@import "./pattern-library/dimensions.scss";
-@import "./pattern-library/palette.scss";
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import './pattern-library/std-classes.scss';
+@import './pattern-library/dimensions.scss';
+@import './pattern-library/palette.scss';
 
 /* Full Screen */
 html,
@@ -14,7 +14,7 @@ body,
 }
 
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 // Layout debugging
@@ -35,4 +35,8 @@ div {
 // *** color="primary" needs to be defined in html for this to work
 .mat-radio-button.mat-primary .mat-radio-inner-circle {
   background-color: $primary-blue;
+}
+
+mat-error {
+  color: $color-secondary !important;
 }

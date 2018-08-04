@@ -1,9 +1,10 @@
 @import './palette.scss';
+@import './dimensions.scss';
 
 // Card
 .std-card {
   width: 400px;
-  border-radius: 10px;
+  border-radius: $borderRadius;
 }
 
 .std-full-width-form > mat-form-field {
@@ -11,7 +12,7 @@
 }
 
 .std-card-header {
-  background: rgb(238, 242, 249);
+  background: $color-gray-cool-light;
   padding: 20px;
   justify-content: center;
 }
@@ -21,24 +22,34 @@
 }
 
 .std-card-actions {
-  margin: 20px;
   display: flex !important;
   justify-content: center;
 }
 
 .std-card-footer {
+  background: $color-gray-lightest;
   display: flex !important;
-  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0px 0px $borderRadius $borderRadius;
+  margin: 0 !important;
+}
+
+.std-card-errors {
+  width: 100%;
+  padding: 7px 0px 7px 0px;
+  display: flex !important;
   justify-content: center;
 }
 
 // Buttons
 
 .std-submit-button {
-  background-color: blue;
+  background-color: $color-primary;
   color: white;
   padding: 5px 10px 5px 10px !important;
-  border-radius: 5px !important;
+  border-radius: $borderRadius !important;
+  width: 50%;
 }
 
 .std-basic-button {
