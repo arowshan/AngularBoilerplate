@@ -22,14 +22,15 @@
       </form>
     </mat-card-content>
 
-    <mat-card-footer class="std-card-footer">
+    <mat-card-footer class="std-card-footer" fxLayout="column" fxLayoutAlign="center center">
       <mat-error class="std-card-errors" *ngIf="res?.message">
-        {{res?.message}}</mat-error>
+        {{res?.message}}
+      </mat-error>
+      <div class="redirect-msg">
+        <a routerLink="/signup">Create an account</a>
+      </div>
     </mat-card-footer>
 
   </mat-card>
-  <div class="register-msg">
-    <a routerLink="/signup">Create an account</a>
-  </div>
 
 </div>

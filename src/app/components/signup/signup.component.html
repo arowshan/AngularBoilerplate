@@ -29,13 +29,14 @@
       </form>
 
     </mat-card-content>
-    <mat-card-footer class="std-card-footer" *ngIf="errors">
+    <mat-card-footer class="std-card-footer" *ngIf="errors" class="std-card-footer" fxLayout="column" fxLayoutAlign="center center">
       <mat-error class="std-card-errors" *ngFor="let err of errors">
         {{err?.field}} {{err?.defaultMessage}}</mat-error>
+      <div class="redirect-msg">Already have an account?
+        <a [routerLink]="['/signin']">&nbsp;Sign In</a>
+      </div>
     </mat-card-footer>
 
   </mat-card>
-  <div class="register-msg">Already have an account?
-    <a [routerLink]="['/signin']">Sign In</a>
-  </div>
+
 </div>

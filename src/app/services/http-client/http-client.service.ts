@@ -4,15 +4,16 @@ import {
   HttpErrorResponse,
   HttpHeaders
 } from '@angular/common/http';
-import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { throwError, Observable } from 'rxjs';
+import { catchError, finalize } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
+import { LoaderService } from '../loader.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpClientService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public loaderService: LoaderService) {}
 
   setupUrl(url) {
     return environment.backendUrl + url;
@@ -35,9 +36,15 @@ export class HttpClientService {
   }
 
   post(url, body?) {
+    setTimeout(() => this.loaderService.display(true));
     return this.http
       .post(this.setupUrl(url), body)
-      .pipe(catchError(this.handleError));
+      .pipe(catchError(this.handleError))
+      .pipe(
+        finalize(() => {
+          this.loaderService.display(false);
+        })
+      );
   }
 
   delete(url) {
