@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.css('.register-msg')).getText();
+    return element(by.css('.redirect-msg')).getText();
   }
 }
