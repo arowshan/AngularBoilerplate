@@ -23,6 +23,18 @@ export class ApiService {
     return this.http.post(apiUrls.upload, formData);
   }
 
+  uploadMultiple(filesToUpload): Observable<Object> {
+    const formData: FormData = new FormData();
+    formData.append('files', filesToUpload[0]);
+    return this.http.post(apiUrls.uploadMultiple, formData);
+  }
+
+  download() {
+    return this.http.get(
+      apiUrls.download + `/${'1533571439622-NER-2004-2003.gif'}`
+    );
+  }
+
   getAllReservations() {
     return this.http.get(apiUrls.getAllReservations);
   }
