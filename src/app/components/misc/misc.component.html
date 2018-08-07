@@ -2,6 +2,8 @@
 <button mat-raised-button (click)="createReservation()">Create Reservation</button>
 <button mat-raised-button (click)="getAllReservations()">Get Reservation</button>
 <br>
+<br>
+<hr>
 <input type="file" id="file" enctype="multipart/form-data" (change)="handleFileInput($event.target.files)" multiple>
 <button mat-raised-button (click)="uploadFiles()" [disabled]="filesToUpload.length<1">Upload</button>
 

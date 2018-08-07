@@ -22,6 +22,7 @@ describe('workspace-project App', () => {
   let username;
   let password;
   let submitButton;
+  let currentTest;
 
   beforeEach(() => {
     page = new SigninPage();
@@ -30,6 +31,11 @@ describe('workspace-project App', () => {
     password = page.getPassword();
     password.clear();
     submitButton = page.getSubmitButton();
+    jasmine.getEnv().addReporter({
+      specStarted: function(result) {
+        currentTest = result.fullName;
+      }
+    });
   });
 
   it('should have a link to the sign up page', () => {
@@ -48,7 +54,7 @@ describe('workspace-project App', () => {
     username.sendKeys('wronguser');
     password.sendKeys('nopass');
     submitButton.click();
-    expect(page.getSigninErrorMsg()).toContain('Bad');
+    expect(page.getSigninErrorMsg()).toContain('Invalid');
   });
 
   it('should log in and redirect to home when credentials are correct', () => {
