@@ -25,7 +25,7 @@ export class ApiService {
 
   uploadMultiple(filesToUpload): Observable<Object> {
     const formData: FormData = new FormData();
-    formData.append('files', filesToUpload[0]);
+    formData.append('files', filesToUpload);
     return this.http.post(apiUrls.uploadMultiple, formData);
   }
 

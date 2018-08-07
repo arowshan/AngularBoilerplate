@@ -29,7 +29,7 @@
       </form>
 
     </mat-card-content>
-    <mat-card-footer class="std-card-footer" *ngIf="errors" class="std-card-footer" fxLayout="column" fxLayoutAlign="center center">
+    <mat-card-footer class="std-card-footer" class="std-card-footer" fxLayout="column" fxLayoutAlign="center center">
       <mat-error class="std-card-errors" *ngFor="let err of errors">
         {{err?.field}} {{err?.defaultMessage}}</mat-error>
       <div class="redirect-msg">Already have an account?

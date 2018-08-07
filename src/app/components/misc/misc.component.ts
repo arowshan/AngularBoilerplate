@@ -52,10 +52,10 @@ export class MiscComponent implements OnInit {
       });
     } else if (this.filesToUpload.length > 1) {
       let files = [];
-      // for (let i = 0; i < this.filesToUpload.length; i++) {
-      //   files.push(this.filesToUpload[i]);
-      // }
-      this.apiService.uploadMultiple([files[0]]).subscribe(res => {
+      for (let i = 0; i < this.filesToUpload.length; i++) {
+        files.push(this.filesToUpload[i]);
+      }
+      this.apiService.uploadMultiple(files).subscribe(res => {
         files = [];
       });
     }
