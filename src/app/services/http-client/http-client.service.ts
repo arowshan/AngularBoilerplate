@@ -31,7 +31,9 @@ export class HttpClientService {
 
   get(url) {
     return this.http
-      .get(this.setupUrl(url), { headers: this.getHeaders() })
+      .get(this.setupUrl(url), {
+        headers: this.getHeaders()
+      })
       .pipe(catchError(this.handleError));
   }
 
@@ -50,6 +52,15 @@ export class HttpClientService {
   delete(url) {
     return this.http
       .delete(this.setupUrl(url), { headers: this.getHeaders() })
+      .pipe(catchError(this.handleError));
+  }
+
+  getFile(url) {
+    return this.http
+      .get(this.setupUrl(url), {
+        headers: this.getHeaders(),
+        responseType: 'blob'
+      })
       .pipe(catchError(this.handleError));
   }
 

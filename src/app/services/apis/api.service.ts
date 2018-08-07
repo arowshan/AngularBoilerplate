@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   download() {
-    return this.http.get(
+    return this.http.getFile(
       apiUrls.download + `/${'1533571439622-NER-2004-2003.gif'}`
     );
   }

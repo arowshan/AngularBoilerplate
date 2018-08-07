@@ -6,6 +6,7 @@ import {
   MatDialog
 } from '@angular/material/dialog';
 import { ApiService } from '../../services/apis/api.service';
+import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-misc',
@@ -61,6 +62,9 @@ export class MiscComponent implements OnInit {
   }
 
   download() {
-    this.apiService.download().subscribe();
+    this.apiService.download().subscribe(res => {
+      const blob = new Blob([res], { type: 'image/*' });
+      FileSaver.saveAs(blob, 'im.gif');
+    });
   }
 }
