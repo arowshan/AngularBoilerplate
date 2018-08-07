@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { ImageModalComponent } from '../image-modal/image-modal.component';
 
 @Component({
   selector: 'app-carousel',
@@ -14,7 +16,7 @@ export class CarouselComponent implements OnInit {
 
   currentImageIndex;
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
     // Check if any images, set first one
@@ -33,5 +35,13 @@ export class CarouselComponent implements OnInit {
     if (this.currentImageIndex > 0) {
       this.currentImageIndex--;
     }
+  }
+
+  openImageDialog(data): void {
+    const dialogRef = this.dialog.open(ImageModalComponent, {
+      data: { image: data }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {});
   }
 }

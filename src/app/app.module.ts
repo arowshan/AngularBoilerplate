@@ -73,6 +73,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { ModalDialogComponent } from './components/modal-dialog/modal-dialog.component';
 import { MiscComponent } from './components/misc/misc.component';
 import { HttpHeaderInterceptor } from './services/http-client/http-header-interceptor';
+import { ImageModalComponent } from './components/image-modal/image-modal.component';
 
 // End of Material Modules
 
@@ -98,7 +99,8 @@ import { HttpHeaderInterceptor } from './services/http-client/http-header-interc
     SidenavLinksComponent,
     CarouselComponent,
     ModalDialogComponent,
-    MiscComponent
+    MiscComponent,
+    ImageModalComponent
   ],
   imports: [
     BrowserModule,
@@ -154,7 +156,7 @@ import { HttpHeaderInterceptor } from './services/http-client/http-header-interc
       multi: true
     }
   ],
-  entryComponents: [ModalDialogComponent],
+  entryComponents: [ModalDialogComponent, ImageModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
