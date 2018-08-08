@@ -1,23 +1,11 @@
 import { browser } from 'protractor';
 import { protractor } from 'protractor/built/ptor';
 import { SigninPage } from './signin.po';
+import { addDelay } from '../globals';
 
-// ****To delay browser between each test
-const origFn = browser.driver.controlFlow().execute;
+addDelay();
 
-browser.driver.controlFlow().execute = function() {
-  const args = arguments;
-
-  // queue 100ms wait
-  origFn.call(browser.driver.controlFlow(), function() {
-    return protractor.promise.delayed(100);
-  });
-
-  return origFn.apply(browser.driver.controlFlow(), args);
-};
-/// ****End of To delay browser between each test
-
-describe('workspace-project App', () => {
+describe('Component SignIn', () => {
   let page: SigninPage;
   let username;
   let password;
@@ -31,16 +19,11 @@ describe('workspace-project App', () => {
     password = page.getPassword();
     password.clear();
     submitButton = page.getSubmitButton();
-    jasmine.getEnv().addReporter({
-      specStarted: function(result) {
-        currentTest = result.fullName;
-      }
-    });
   });
 
   it('should have a link to the sign up page', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toContain('Create');
+    expect(page.getSignupLink()).toContain('Create');
   });
 
   it('should have a username and password field that user can fill which enables the submit button', () => {
@@ -62,5 +45,8 @@ describe('workspace-project App', () => {
     password.sendKeys('secret');
     submitButton.click();
     expect(browser.getCurrentUrl()).toContain('home');
+    page.logout();
   });
+
+  afterAll(() => {});
 });

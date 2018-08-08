@@ -1,11 +1,11 @@
 import { browser, by, element } from 'protractor';
 
-export class SigninPage {
+export class SignupPage {
   navigateTo() {
-    return browser.get('/signin');
+    return browser.get('/signup');
   }
 
-  getSignupLink() {
+  getSigninLink() {
     return element(by.css('.redirect-msg')).getText();
   }
 
@@ -23,9 +23,5 @@ export class SigninPage {
 
   getSigninErrorMsg() {
     return element(by.css('mat-error')).getText();
-  }
-
-  logout() {
-    element(by.css('#logout')).click();
   }
 }
