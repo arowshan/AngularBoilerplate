@@ -6,9 +6,9 @@ export const addDelay = () => {
   const origFn = browser.driver.controlFlow().execute;
   browser.driver.controlFlow().execute = function() {
     const args = arguments;
-    // queue 10ms wait
+    // queue xxx ms wait
     origFn.call(browser.driver.controlFlow(), function() {
-      return protractor.promise.delayed(10);
+      return protractor.promise.delayed(0);
     });
     return origFn.apply(browser.driver.controlFlow(), args);
   };

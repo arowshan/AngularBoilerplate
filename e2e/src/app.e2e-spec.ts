@@ -12,8 +12,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should load the sign in page', () => {
-    page.navigateTo();
+  it('should load the sign in page', async () => {
+    await page.navigateTo();
     expect(page.getParagraphText()).toContain('Create');
   });
 });

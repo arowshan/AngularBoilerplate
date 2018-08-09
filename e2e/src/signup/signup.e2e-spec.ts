@@ -7,24 +7,40 @@ addDelay();
 
 describe('Component SignUp', () => {
   let page: SignupPage;
+  let name;
   let username;
+  let email;
   let password;
   let submitButton;
   let currentTest;
 
-  beforeEach(() => {
+  beforeAll(() => {
     page = new SignupPage();
+    page.navigateTo();
+  });
+
+  beforeEach(() => {
+    name = page.getFormControl('name');
+    username = page.getFormControl('username');
+    email = page.getFormControl('email');
+    password = page.getFormControl('password');
+    username.clear();
+    name.clear();
+    email.clear();
+    password.clear();
+    submitButton = page.getSubmitButton();
   });
 
   it('should have a link to the sign in page', () => {
-    page.navigateTo();
     expect(page.getSigninLink()).toContain('Sign In');
   });
 
-  // it('should have a username and password field that user can fill which enables the submit button', () => {
-  //   expect(submitButton.isEnabled()).toBe(false);
-  //   username.sendKeys('test');
-  //   password.sendKeys('secret');
-  //   expect(submitButton.isEnabled()).toBe(true);
-  // });
+  it('should have a email and password field that user can fill which enable submission', () => {
+    expect(submitButton.isEnabled()).toBe(false);
+    name.sendKeys('test user');
+    username.sendKeys('testuser');
+    email.sendKeys('test@test.com');
+    password.sendKeys('testpass');
+    expect(submitButton.isEnabled()).toBe(true);
+  });
 });

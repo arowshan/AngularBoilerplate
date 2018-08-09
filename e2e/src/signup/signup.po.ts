@@ -9,19 +9,27 @@ export class SignupPage {
     return element(by.css('.redirect-msg')).getText();
   }
 
+  getName() {
+    return element(by.css('input[formControlName=email]'));
+  }
+
   getUsername() {
-    return element(by.css('input[formControlName=usernameOrEmail]'));
+    return element(by.css('input[formControlName=email]'));
+  }
+
+  getEmail() {
+    return element(by.css('input[formControlName=email]'));
   }
 
   getPassword() {
     return element(by.css('input[formControlName=password]'));
   }
 
-  getSubmitButton() {
-    return element(by.css('button[type=submit]'));
+  getFormControl(fcName) {
+    return element(by.css(`input[formControlName=${fcName}]`));
   }
 
-  getSigninErrorMsg() {
-    return element(by.css('mat-error')).getText();
+  getSubmitButton() {
+    return element(by.css('button[type=submit]'));
   }
 }
