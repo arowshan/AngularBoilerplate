@@ -29,7 +29,7 @@
           <mat-option value="canada">Canada</mat-option>
           <mat-option value="mexico">Mexico</mat-option>
         </mat-select>
-        <mat-error>{{country?.errors}}</mat-error>
+        <mat-error *ngIf="form.get('country')">{{country?.errors}}</mat-error>
       </mat-form-field>
 
       <!-- Text Area -->
