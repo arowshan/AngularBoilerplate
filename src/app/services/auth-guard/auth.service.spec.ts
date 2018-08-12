@@ -80,7 +80,7 @@ describe('AuthService', () => {
       success: true
     };
     componentService.login(form).subscribe(value => {
-      expect(typeof value).toEqual('boolean');
+      expect(typeof value).toEqual('object');
       done();
     });
   });
