@@ -9,7 +9,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cover": "ng test --watch=false --code-coverage",
-    "e2e:watch": "watch \"ng e2e --port=4201\" src e2e --wait=1"
+    "e2e:watch": "watch \"ng e2e --port=4201\" src e2e --wait=1",
+    "unitci": "ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
+    "e2eci": "ng e2e --protractor-config=./e2e/protractor-ci.conf.js"
   },
   "private": true,
   "dependencies": {
