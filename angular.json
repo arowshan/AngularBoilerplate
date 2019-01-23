@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "VerDemoApp": {
+    "DemoApp": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -45,18 +45,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "VerDemoApp:build"
+            "browserTarget": "DemoApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "VerDemoApp:build:production"
+              "browserTarget": "DemoApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "VerDemoApp:build"
+            "browserTarget": "DemoApp:build"
           }
         },
         "test": {
@@ -80,7 +80,7 @@
         }
       }
     },
-    "VerDemoApp-e2e": {
+    "DemoApp-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -88,7 +88,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "VerDemoApp:serve"
+            "devServerTarget": "DemoApp:serve"
           }
         },
         "lint": {
@@ -101,7 +101,7 @@
       }
     }
   },
-  "defaultProject": "VerDemoApp",
+  "defaultProject": "DemoApp",
   "schematics": {
     "@schematics/angular:component": {
       "styleext": "scss"

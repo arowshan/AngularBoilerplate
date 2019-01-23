@@ -16,13 +16,13 @@ export const appRoutes = [
   { path: 'signin', component: SigninComponent },
   {
     path: 'layout',
-    component: GridLayoutComponent,
-    canActivate: [AuthGuardService]
+    component: GridLayoutComponent
+    // canActivate: [AuthGuardService]
   },
   {
     path: 'home',
     component: HomeComponent,
-    canActivateChild: [AuthGuardService],
+    // canActivateChild: [AuthGuardService],
     children: homeRoutes
   },
   {
